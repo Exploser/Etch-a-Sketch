@@ -41,5 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
         gridItems.forEach(item => item.style.backgroundColor = 'white');
     });
 
-    generateGrid(16); // Initialize a 16x16 grid
+    generateGrid(16); // Initialize a 16x16 grid replace the magic number
 });

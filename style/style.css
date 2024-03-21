@@ -4,6 +4,30 @@
     margin: 0;
     padding: 0;
 }
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.head-text {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.head-tag p {
+    font-size: 16px;
+    color: #606060;
+}
+
 /* Game area styling */
 .game {
     display: flex;
@@ -12,10 +36,31 @@
     padding: 20px;
 }
 
+/* Player tools (buttons) */
+.player-tools {
+    margin-bottom: 20px;
+}
+
+.player-tools button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.player-tools button:hover {
+    background-color: #0056b3;
+}
+
 /* Grid box styling */
 .grid-box {
     display: grid;
-    grid-template-columns: repeat(16, 2rem);
+    grid-template-columns: repeat(16, 2rem); /* Adjust the number of columns based on your grid size */
     grid-gap: 2px;
 }
 
@@ -24,4 +69,21 @@
     height: 2rem;
     background-color: #fff;
     border: 1px solid #ddd;
+}
+
+/* Adjustments for responsiveness (optional) */
+@media (max-width: 768px) {
+    .player-tools button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .grid-box {
+        grid-template-columns: repeat(16, 1.5rem); /* Smaller grid items for smaller screens */
+    }
+
+    .grid-item {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
 }
