@@ -19,4 +19,27 @@ document.addEventListener('DOMContentLoaded', () => {
             gridBox.appendChild(gridItem);
         }
     }
+
+    function paintGridItem(e) {
+        if (isPainting) {
+            e.target.style.backgroundColor = 'black';
+        } else {
+            e.target.style.backgroundColor = 'white';
+        }
+    }
+
+    paintButton.addEventListener('click', () => {
+        isPainting = true;
+    });
+
+    eraserButton.addEventListener('click', () => {
+        isPainting = false;
+    });
+
+    cleanButton.addEventListener('click', () => {
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(item => item.style.backgroundColor = 'white');
+    });
+
+    generateGrid(16); // Initialize a 16x16 grid
 });
