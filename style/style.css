@@ -96,6 +96,7 @@ header {
 .grid-box {
     outline: var(--color-secondary) solid clamp(1px,4px,5px);
     display: grid;
+    grid-template-columns: repeat(16, 2rem);
     grid-gap: 2px;
 }
 
@@ -111,6 +112,10 @@ header {
     .player-tools button {
         padding: 8px 15px;
         font-size: 14px;
+    }
+
+    .grid-box{
+        grid-template-columns: repeat(16, 2rem);
     }
 
     .grid-item {
