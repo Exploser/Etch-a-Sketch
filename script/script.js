@@ -6,12 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const colorPicker = document.getElementById('colorPicker');
 
     let isPainting = true; // Default mode
-
-    // Add an event listener for the 'change' event
-    colorPicker.addEventListener('change', function() {
-        // Log the current color value to the console
-        console.log('Selected color:', this.value);
-    });
+    let pickedColor = '#000000'
 
 
     function generateGrid(size) {
@@ -30,7 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function paintGridItem(e) {
         if (isPainting) {
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = pickedColor;
         } else {
             e.target.style.backgroundColor = 'white';
         }
@@ -50,10 +45,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
     
     colorPicker.addEventListener('change', function() {
-        // Log the current color value to the console
-        console.log('Selected color:', this.value);
+        pickedColor = this.value;
     });
-
 
     generateGrid(16); // Initialize a 16x16 grid replace the magic number
 });
