@@ -1,4 +1,20 @@
-/* General Resets */
+/* General Resets and Variables */
+:root {
+    /* Color palette */
+    --color-primary: #a58f7a;
+    --color-secondary: #4199d4;
+    --color-tertiary: #A74E4F;
+    --color-background: #D2CBC4;
+    --color-button: #007bff;
+    --color-button-hover: #0056b3;
+    --color-white: #fff;
+    --color-border: #ddd;
+
+    /* Text styles */
+    --font-family-default: Arial, sans-serif;
+    --font-family-pixel: "Pixelify Sans", sans-serif;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,36 +25,38 @@ body,
 html {
     width: 100%;
     height: 100%;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-default);
 }
 
 /* Header styling */
 header {
     text-align: center;
     padding: 20px;
-    background-color: #a58f7a;
+    background-color: var(--color-primary);
 }
 
 .head-text {
-    color: #4199d4;
-    font-family: "Pixelify Sans", sans-serif;
+    color: var(--color-secondary);
+    font-family: var(--font-family-pixel);
     font-optical-sizing: auto;
     font-weight: bold;
     font-style: normal;
+    -webkit-text-stroke-width: clamp(1px,2px,5px);
+    -webkit-text-stroke-color: black;
     font-size: clamp(5px, 10vw, 800px);
     margin-bottom: 10px;
 }
 
 .head-tag p {
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: var(--font-family-pixel);
     font-size: clamp(15px, 5vw, 150px);
-    color: #A74E4F;
+    color: var(--color-tertiary);
 }
 
 /* Game area styling */
 .game {
-    background-color: #D2CBC4;
-    font-family: "Pixelify Sans", sans-serif;
+    background-color: var(--color-background);
+    font-family: var(--font-family-pixel);
     font-optical-sizing: auto;
     display: flex;
     flex-direction: column;
@@ -46,7 +64,7 @@ header {
     padding: 20px;
 }
 
-/* Player tools (buttons) */
+/* Player tools (buttons) and Color Picker */
 .player-tools {
     display: flex;
     margin-bottom: 20px;
@@ -58,47 +76,41 @@ header {
 }
 
 .player-tools button {
-    font-family: "Pixelify Sans", sans-serif;
+    font-family: var(--font-family-pixel);
     padding: 10px 20px;
     margin-right: 10px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #007bff;
-    color: white;
+    background-color: var(--color-button);
+    color: var(--color-white);
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .player-tools button:hover {
-    background-color: #0056b3;
+    background-color: var(--color-button-hover);
 }
 
-/* Grid box styling */
+/* Grid box and items */
 .grid-box {
+    outline: var(--color-secondary) solid clamp(1px,4px,5px);
     display: grid;
-    grid-template-columns: repeat(16, 2rem);
-    /* Adjust the number of columns based on your grid size */
     grid-gap: 2px;
 }
 
 .grid-item {
     width: 2rem;
     height: 2rem;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
 }
 
-/* Adjustments for responsiveness (optional) */
-@media (max-width: 768px) {
+/* Responsive Design Adjustments */
+@media (max-width: 926px) {
     .player-tools button {
         padding: 8px 15px;
         font-size: 14px;
-    }
-
-    .grid-box {
-        grid-template-columns: repeat(16, 1.5rem);
-        /* Smaller grid items for smaller screens */
     }
 
     .grid-item {
